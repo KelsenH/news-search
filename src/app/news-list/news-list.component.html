@@ -1,0 +1,15 @@
+<div class="row">
+  <button mat-button color="primary" (click)="routeBackToSearch()">
+    Back to Search</button
+  ><mat-paginator
+    [length]="totalResults$ | async"
+    [pageSize]="10"
+    aria-label="Select page"
+    (page)="handlePageChange($event)"
+  >
+  </mat-paginator>
+</div>
+<app-article
+  *ngFor="let article of articles$ | async"
+  [article]="article"
+></app-article>
